@@ -25,7 +25,7 @@ const MuiButton = ({
   type = "primary",
   outlined = false,
   loading = false,
-  size = "md",
+  size = "lg",
   height = "50px",
   width,
   buttonType = "button",
@@ -42,14 +42,18 @@ const MuiButton = ({
     },
   };
 
-  const widths: Record<string, string> = {
-    sm: "120px",
-    md: "200px",
-    lg: "100%",
-    "": "auto",
+  const variation: Record<string, Record<string, string>> = {
+    sm: {
+      padding: "0px 16px 0px 16px",
+      borderRadius: "16px",
+    },
+    lg: {
+      padding: "29px 24.5px 29px 24.5px",
+      borderRadius: "18px",
+    },
   };
 
-  const selected = colors[type] || colors.default;
+  const selected = colors[type];
 
   const onPress = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (preventDefault) {
@@ -69,17 +73,18 @@ const MuiButton = ({
       aria-busy={loading}
       sx={{
         height,
-        borderRadius: "12px",
-        width: width ?? widths[size],
+        borderRadius: variation[size].borderRadius,
+        width: width ?? "auto",
         textTransform: "none",
-        fontSize: "1rem",
+        fontSize: "1.05rem",
+        padding: variation[size].padding,
         ...(outlined
           ? {
               color: selected.main,
               borderColor: selected.main,
               "&:hover": {
                 borderRadius: "16px",
-                backgroundColor : 'rgba(244,243,243,0.1)'
+                backgroundColor: "rgba(244,243,243,0.1)",
               },
             }
           : {
