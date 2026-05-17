@@ -12,7 +12,7 @@ const Home = () => {
       <Box
         sx={{
           position: "relative",
-          height: "100vh",
+          height: "90vh",
           overflow: "hidden",
         }}
       >
@@ -52,11 +52,18 @@ const Home = () => {
             zIndex: 2,
             height: "100%",
             px: { xs: 3, md: 10 },
+            alignItems: "center",
           }}
         >
           <Grid size={{ xs: 12, md: 6 }}>
             <Box sx={{ maxWidth: 600 }}>
-              <Text size="bigHeader">See the unseen. Know the unknowable</Text>
+              <Text size="bigHeader" sx={{ lineHeight: "45px" }}>
+                See the unseen.<br/> Know the unknowable
+              </Text>
+              <Text size="subHeader" sx={{ margin: "20px 0px 25px 0px" }}>
+                Your video contains every insight, every event, every decision
+                that mattered. Extracting it has been impossible. Until now.
+              </Text>
 
               <Box sx={{ display: "flex", gap: 2 }}>
                 <Button
