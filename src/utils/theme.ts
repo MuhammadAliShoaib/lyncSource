@@ -5,7 +5,10 @@ const theme = () => {
   const secondaryPalette = {
     main: "#1d1c1b",
   };
-  
+
+  const staticColorPalette = {
+    brown : ''
+  };
 
   return {
     breakpoints: {
@@ -26,7 +29,9 @@ const theme = () => {
       secondary: secondaryPalette,
       text: {
         primary: primaryPalette.main,
+        secondary: secondaryPalette.main,
       },
+      static: staticColorPalette,
     },
   };
 };

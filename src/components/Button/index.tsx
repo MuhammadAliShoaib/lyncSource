@@ -44,11 +44,11 @@ const MuiButton = ({
 
   const variation: Record<string, Record<string, string>> = {
     sm: {
-      padding: "0px 16px 0px 16px",
+      padding: "7px 16px 7px 16px",
       borderRadius: "16px",
     },
     lg: {
-      padding: "29px 24.5px 29px 24.5px",
+      padding: "15px 24.5px 15px 24.5px",
       borderRadius: "18px",
     },
   };
@@ -72,7 +72,6 @@ const MuiButton = ({
       aria-label={text}
       aria-busy={loading}
       sx={{
-        height,
         borderRadius: variation[size].borderRadius,
         width: width ?? "auto",
         textTransform: "none",

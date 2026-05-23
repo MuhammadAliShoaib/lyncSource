@@ -1,0 +1,45 @@
+export const resultsStyles = {
+  root: {
+    padding: "30px",
+    backgroundColor: (theme: any) => theme.palette.text.secondary,
+  },
+
+  topGrid: {
+    mb: 10,
+    mt: 8,
+  },
+
+  leftPanel: {
+    padding: "0px 45px 35px 45px",
+    borderLeft: "1px solid #3a3a3a",
+    borderRight: "1px solid #3a3a3a",
+  },
+
+  rightPanel: {
+    padding: "0px 45px 35px 45px",
+    borderRight: "1px solid #3a3a3a",
+  },
+
+  titleText: {
+    lineHeight: "40px",
+  },
+
+  bodyText: {
+    marginBottom: "30px",
+  },
+
+  bottomLeft: {
+    padding: "0px 45px 0px 25px",
+    borderLeft: "1px solid #3a3a3a",
+  },
+
+  bottomRight: {
+    padding: "0px 45px 0px 25px",
+  },
+
+  image: {
+    width: "100%",
+    height: "100%",
+    display: "block",
+  },
+};
