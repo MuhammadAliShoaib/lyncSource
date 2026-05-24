@@ -95,7 +95,6 @@ const Tabs = () => {
                 <Text
                   size="bigHeader"
                   color="text.primary"
-                  weight={500}
                   sx={tabsStyles.useCaseTitle}
                 >
                   {item.title}

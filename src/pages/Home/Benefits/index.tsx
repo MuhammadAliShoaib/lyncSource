@@ -134,7 +134,7 @@ const Benefits = () => {
 
           <Grid size={{ xs: 12, md: 6 }} sx={benefitsStyles.rightPanel}>
             <Text
-              size="body"
+              size="sub"
               sx={benefitsStyles.bodyText}
               color="text.secondary"
             >

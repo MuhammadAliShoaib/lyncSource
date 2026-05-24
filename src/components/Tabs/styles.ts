@@ -59,12 +59,13 @@ export const tabsStyles = {
   useCaseShowcase: {
     display: "grid",
     gridTemplateColumns: {
-      xs: "1fr",
-      md: "minmax(180px, 0.72fr) minmax(0, 1.48fr) minmax(180px, 0.72fr)",
+      xs: "repeat(2, minmax(0, 1fr))",
+      md: "minmax(190px, 0.62fr) minmax(0, 1.35fr) minmax(190px, 0.62fr)",
     },
-    gap: { xs: 0, md: 4 },
+    gap: { xs: 2, sm: 3, md: 4 },
     alignItems: "stretch",
-    mx: { xs: 0, md: "-18vw", lg: "-13vw" },
+    mx: { xs: 0, md: "-12vw", lg: "-8vw" },
+    px: { xs: 2, sm: 3, md: 0 },
     animationDuration: "560ms",
     animationTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)",
     animationFillMode: "both",
@@ -104,6 +105,10 @@ export const tabsStyles = {
       "&[data-direction='previous']": {
         animationName: "slideTabsMobilePrevious",
       },
+
+      "& > :first-of-type": {
+        display: "none",
+      },
     },
 
     "@keyframes slideTabsMobileNext": {
@@ -133,10 +138,10 @@ export const tabsStyles = {
     position: "relative",
     display: "flex",
     alignItems: "flex-end",
-    minHeight: { xs: 420, sm: 500, md: 620 },
+    minHeight: { xs: 390, sm: 460, md: 540, lg: 586 },
     overflow: "hidden",
     backgroundImage:
-      "linear-gradient(90deg, rgba(0,0,0,0.72), rgba(0,0,0,0.2)), url('/machine.png')",
+      "linear-gradient(90deg, rgba(0,0,0,0.72), rgba(0,0,0,0.2)), url('/mock.png')",
     backgroundSize: "cover",
     backgroundPosition: "center",
     color: "#fff",
@@ -145,38 +150,39 @@ export const tabsStyles = {
       content: '""',
       position: "absolute",
       inset: 0,
-      background:
-        "linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.42))",
+      background: "linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.42))",
     },
   },
 
   useCaseCardActive: {
-    borderRadius: { xs: "40px", sm: "56px", md: "96px" },
+    borderRadius: { xs: "28px", sm: "40px", md: "80px" },
   },
 
   useCaseCardPreview: {
-    display: { xs: "none", md: "flex" },
-    borderRadius: "96px",
+    display: "flex",
+    borderRadius: { xs: "28px", sm: "40px", md: "80px" },
     filter: "brightness(0.72)",
   },
 
   useCaseContent: {
     position: "relative",
     zIndex: 1,
-    maxWidth: { xs: "100%", md: 650 },
-    px: { xs: 3, sm: 5, md: 6 },
-    pb: { xs: 4, sm: 6, md: 9 },
+    maxWidth: { xs: "100%", md: 720 },
+    px: { xs: 2, sm: 3, md: 6 },
+    pb: { xs: 3, sm: 5, md: 8 },
   },
 
   useCaseTitle: {
     lineHeight: 1.08,
-    mb: { xs: 2, md: 3 },
+    mb: { xs: 1.5, md: 3 },
+    fontSize: { xs: "1.15rem", sm: "1.45rem", md: "2rem" },
   },
 
   useCaseDescription: {
     maxWidth: 580,
     lineHeight: 1.4,
-    mb: { xs: 3, md: 4 },
+    fontSize: { xs: "0.8rem", sm: "0.95rem", md: "1.2rem" },
+    mb: { xs: 2, md: 4 },
   },
 
   useCaseLink: {
@@ -184,7 +190,7 @@ export const tabsStyles = {
     alignItems: "center",
     gap: 1,
     color: "#fff",
-    fontSize: { xs: "1rem", md: "1.25rem" },
+    fontSize: { xs: "0.8rem", sm: "0.95rem", md: "1.25rem" },
     lineHeight: 1,
   },
 
