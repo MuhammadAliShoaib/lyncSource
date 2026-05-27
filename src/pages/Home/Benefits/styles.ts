@@ -1,10 +1,20 @@
+import type { Theme } from "@mui/material/styles";
+
 export const benefitsStyles = {
   root: {
     py: { xs: 4, md: "30px" },
-    backgroundColor: (theme: any) => theme.palette.text.primary,
+    backgroundColor: (theme: Theme) => theme.palette.text.primary,
   },
   benefitsRoot: {
     px: { xs: 2, sm: 3, md: "30px" },
+  },
+
+  pointsBox: {
+    width: "95%",
+    boxShadow:
+      "0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1)",
+    borderRadius: 40,
+    height: "85vh",
   },
 
   topGrid: {
@@ -13,7 +23,35 @@ export const benefitsStyles = {
   },
 
   topGrid2: {
+    display: "flex",
+    justifyContent: "center",
     mt: { xs: 5, md: 8 },
+  },
+
+  detailCardsCarousel: {
+    display: "flex",
+    justifyContent: { xs: "flex-start", lg: "center" },
+    flexWrap: { xs: "nowrap", lg: "wrap" },
+    gap: { xs: 2, lg: 0 },
+    mt: { xs: 5, md: 8 },
+    mx: { xs: -2, sm: -3, lg: 0 },
+    px: { xs: 2, sm: 3, lg: 0 },
+    pb: { xs: 1, lg: 0 },
+    overflowX: { xs: "auto", lg: "visible" },
+    scrollPaddingLeft: { xs: 16, sm: 24 },
+    scrollSnapType: { xs: "x proximity", lg: "none" },
+    WebkitOverflowScrolling: "touch",
+    scrollbarWidth: "none",
+    "&::-webkit-scrollbar": {
+      display: "none",
+    },
+  },
+
+  detailCardCarouselItem: {
+    display: "flex",
+    flex: { xs: "0 0 auto", lg: "initial" },
+    justifyContent: "center",
+    scrollSnapAlign: "start",
   },
 
   trustedByWrapper: {
@@ -37,6 +75,10 @@ export const benefitsStyles = {
     borderRight: { xs: "none", md: "1px solid #1d1c1c33" },
   },
 
+  layersLeftPanel: {
+    px: { xs: 2, sm: 3, md: "45px" },
+  },
+
   leftPanel2: {
     px: { xs: 2, sm: 3, md: "45px" },
     pb: { xs: 3, md: "35px" },
@@ -55,6 +97,10 @@ export const benefitsStyles = {
     pb: { xs: 3, md: "35px" },
     borderLeft: { xs: "1px solid #1d1c1c33", md: "none" },
     borderRight: { xs: "none", md: "1px solid #1d1c1c33" },
+  },
+  layersRightPanel: {
+    px: { xs: 2, sm: 3, md: "45px" },
+    borderLeft: { xs: "1px solid #1d1c1c33" },
   },
 
   rightPanel2: {
@@ -96,5 +142,8 @@ export const benefitsStyles = {
     width: "100%",
     height: "100%",
     display: "block",
+  },
+  layersImage: {
+    width: "100%",
   },
 };

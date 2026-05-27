@@ -10,14 +10,31 @@ interface TextProps extends TypographyProps {
   fontSize?: string | number;
 }
 
+const resolveThemeColor = (theme: any, color?: string) => {
+  if (!color) {
+    return theme.palette.primary.main;
+  }
+
+  const [paletteKey, colorKey] = color.split(".");
+
+  if (paletteKey && colorKey && theme.palette[paletteKey]?.[colorKey]) {
+    return theme.palette[paletteKey][colorKey];
+  }
+
+  return color;
+};
+
 export const Text = styled(Typography, {
   shouldForwardProp: (prop) =>
-    prop !== "size" && prop !== "weight" && prop !== "fontSize" && prop !== "color",
+    prop !== "size" &&
+    prop !== "weight" &&
+    prop !== "fontSize" &&
+    prop !== "color",
 })<TextProps>(({ theme, size, weight, color, fontSize }) => ({
   fontSize: fontSize ?? baseFontSizes[size].default,
   [theme.breakpoints.down("sm")]: {
     fontSize: baseFontSizes[size].small,
   },
   fontWeight: weight,
-  color: color ?? theme.palette.primary.main,
+  color: resolveThemeColor(theme, color),
 }));

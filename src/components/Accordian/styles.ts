@@ -11,7 +11,7 @@ export const accordionStyles = {
   summary: (expanded: boolean) => ({
     backgroundColor: expanded ? "#333231" : "transparent",
     transition: "background-color 0.3s ease",
-    minHeight: "57px !important",
+    minHeight: "55px !important",
     borderRadius: "18px",
 
     "& .MuiAccordionSummary-content": {
