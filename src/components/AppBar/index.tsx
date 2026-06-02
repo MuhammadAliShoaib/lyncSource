@@ -1,118 +1,194 @@
-import AdbIcon from "@mui/icons-material/Adb";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
 import { AppBar as MuiAppBar } from "@mui/material";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
+import Divider from "@mui/material/Divider";
+import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
+import List from "@mui/material/List";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import * as React from "react";
+import { Link as RouterLink } from "react-router-dom";
 import Button from "../Button";
-import Menu from "../Menu";
+import { appBarStyles } from "./styles";
+import { Text } from "../Text";
 
 const pages = [
-  "Platform",
-  "Pricing",
-  "Solutions",
-  "Build",
-  "Resources",
-  "Company",
-];
-
-const options = [
-  {
-    label: "Edit",
-    onClick: () => console.log("Edit clicked"),
-  },
-  {
-    label: "Duplicate",
-    onClick: () => console.log("Duplicate clicked"),
-  },
-  {
-    divider: true,
-  },
-  {
-    label: "Delete",
-    onClick: () => console.log("Delete clicked"),
-  },
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 function AppBar() {
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [isVisible, setIsVisible] = React.useState(true);
+  const lastScrollY = React.useRef(0);
+
+  const toggleMobileMenu = () => {
+    setMobileOpen((open) => !open);
+  };
+
+  const closeMobileMenu = () => {
+    setMobileOpen(false);
+  };
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const isScrollingDown = currentScrollY > lastScrollY.current;
+
+      if (currentScrollY < 16) {
+        setIsVisible(true);
+      } else if (Math.abs(currentScrollY - lastScrollY.current) > 8) {
+        setIsVisible(!isScrollingDown);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <MuiAppBar
-      position="sticky"
-      elevation={0}
-      sx={{
-        background: "rgba(0,0,0,0.35)",
-        backdropFilter: "blur(14px)",
-        WebkitBackdropFilter: "blur(14px)",
-        borderBottom: "1px solid rgba(255,255,255,0.08)",
-      }}
-    >
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <img src="/logo.png" style={{ width: "120px", height: "50px" ,backgroundColor:'red'}} />
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={() => {}}
-              color="inherit"
+    <>
+      <MuiAppBar
+        position="fixed"
+        elevation={0}
+        sx={appBarStyles.root(isVisible, mobileOpen)}
+      >
+        <Container maxWidth={false} sx={appBarStyles.container}>
+          <Toolbar disableGutters sx={appBarStyles.toolbar}>
+            <Box
+              component={RouterLink}
+              to="/"
+              aria-label="TwelveLabs home"
+              sx={appBarStyles.logoLink}
             >
-              <MenuIcon />
-            </IconButton>
-          </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: { xs: "none", md: "flex" },
-              justifyContent: "center",
-            }}
-          >
-            <Menu options={options} />
-          </Box>
-          <Box sx={{ flexGrow: 0 }}>
-            <Box sx={{ display: "flex", gap: 2 }}>
-              <Button
-                size="sm"
-                onClick={() => {}}
-                text="Playground"
-                Icon={ArrowOutwardIcon}
+              <Box
+                component="img"
+                src="/logo.png"
+                alt="TwelveLabs"
+                sx={appBarStyles.logoImage}
               />
+              <Text size="header" sx={appBarStyles.logoText}>
+                Lync Source
+              </Text>
+            </Box>
+
+            <Box
+              component="nav"
+              aria-label="Main navigation"
+              sx={appBarStyles.navigation}
+            >
+              {pages.map((page) => (
+                <Box
+                  key={page.href}
+                  component={RouterLink}
+                  to={page.href}
+                  sx={appBarStyles.navigationLink}
+                >
+                  {page.label}
+                </Box>
+              ))}
+            </Box>
+
+            <Box sx={appBarStyles.desktopActions}>
               <Button
                 size="sm"
                 onClick={() => {}}
                 outlined
                 text="Talk to Sales"
                 Icon={ArrowOutwardIcon}
+                type="secondary"
               />
             </Box>
+
+            <IconButton
+              aria-label="Open navigation menu"
+              aria-controls="mobile-navigation"
+              aria-expanded={mobileOpen}
+              onClick={toggleMobileMenu}
+              sx={appBarStyles.menuButton}
+            >
+              <MenuIcon />
+            </IconButton>
+          </Toolbar>
+        </Container>
+      </MuiAppBar>
+
+      <Drawer
+        id="mobile-navigation"
+        anchor="right"
+        open={mobileOpen}
+        onClose={closeMobileMenu}
+        slotProps={{
+          paper: {
+            sx: appBarStyles.drawerPaper,
+          },
+        }}
+      >
+        <Box sx={appBarStyles.drawerHeader}>
+          <Box sx={appBarStyles.drawerBrand}>
+            <Box
+              component="img"
+              src="/logo.png"
+              alt="TwelveLabs"
+              sx={appBarStyles.drawerLogo}
+            />
+            <Text size="header" sx={appBarStyles.drawerLogoText}>
+              Lync Source
+            </Text>
           </Box>
-        </Toolbar>
-      </Container>
-    </MuiAppBar>
+          <IconButton
+            aria-label="Close navigation menu"
+            onClick={closeMobileMenu}
+            sx={appBarStyles.drawerCloseButton}
+          >
+            <CloseIcon />
+          </IconButton>
+        </Box>
+        <Divider sx={appBarStyles.drawerDivider} />
+        <List sx={appBarStyles.drawerList}>
+          {pages.map((page) => (
+            <ListItemButton
+              key={page.href}
+              component={RouterLink}
+              to={page.href}
+              onClick={closeMobileMenu}
+            >
+              <ListItemText
+                primary={page.label}
+                slotProps={{
+                  primary: {
+                    sx: appBarStyles.drawerListItemText,
+                  },
+                }}
+              />
+            </ListItemButton>
+          ))}
+        </List>
+        <Divider sx={appBarStyles.drawerActionsDivider} />
+        <Box sx={appBarStyles.drawerActions}>
+          <Button
+            size="sm"
+            width="100%"
+            onClick={closeMobileMenu}
+            outlined
+            text="Talk to Sales"
+            Icon={ArrowOutwardIcon}
+          />
+        </Box>
+      </Drawer>
+    </>
   );
 }
 export default React.memo(AppBar);

@@ -1,13 +1,31 @@
 const theme = () => {
   const primaryPalette = {
-    main: "#f4f3f3",
+    main: "#3A3A3A",
+    contrastText: "#FFFFFF",
   };
+
   const secondaryPalette = {
-    main: "#1d1c1b",
+    main: "#EB4E1B",
+    contrastText: "#FFFFFF",
+  };
+
+  const tertiaryPalette = {
+    main: "#6593BC",
+    contrastText: "#000000",
+  };
+
+  const neutralPalette = {
+    main: "#E5E5E5",
+    contrastText: "#000000",
   };
 
   const staticColorPalette = {
-    brown : ''
+    black: "#000000",
+    white: "#FFFFFF",
+    primary: primaryPalette.main,
+    secondary: secondaryPalette.main,
+    tertiary: tertiaryPalette.main,
+    neutral: neutralPalette.main,
   };
 
   return {
@@ -27,6 +45,8 @@ const theme = () => {
     palette: {
       primary: primaryPalette,
       secondary: secondaryPalette,
+      tertiary: tertiaryPalette,
+      neutral: neutralPalette,
       text: {
         primary: primaryPalette.main,
         secondary: secondaryPalette.main,

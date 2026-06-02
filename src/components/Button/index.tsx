@@ -73,6 +73,7 @@ const MuiButton = ({
       aria-busy={loading}
       sx={{
         borderRadius: variation[size].borderRadius,
+        height,
         width: width ?? "auto",
         textTransform: "none",
         fontSize: "1.05rem",
