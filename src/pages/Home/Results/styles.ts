@@ -41,11 +41,13 @@ export const resultsStyles = {
     border: "1px solid #3a3a3a",
     borderRadius: "40px",
     overflow: "hidden",
+    aspectRatio: "16 / 10",
   },
 
   image: {
     width: "100%",
     height: "100%",
     display: "block",
+    objectFit: "cover",
   },
 };

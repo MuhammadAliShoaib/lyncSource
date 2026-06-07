@@ -10,26 +10,26 @@ import { accordionStyles } from "./styles";
 const accordians = [
   {
     name: "panel1",
-    title: "1. Infrastructure",
-    info: "Ingest multimodal data through a single pipeline at ~60x real-time speed. Index an hour of video in a minute. 10k+ hours per day.",
+    title: "1. Strategy",
+    info: "Turning ideas into actionable digital roadmaps that align with business goals.",
     onClick: () => {},
   },
   {
     name: "panel2",
-    title: "2. API + SDK",
-    info: "Access powerful APIs and SDKs to build on top of our platform. Seamless integration with your existing tools and workflows.",
+    title: "2. Experience",
+    info: "Crafting seamless customer journeys that enhance engagement and satisfaction.",
     onClick: () => {},
   },
   {
     name: "panel3",
-    title: "3. MCP",
-    info: "Model Context Protocol enables seamless interaction with AI systems. Standardized, efficient data exchange for your AI workflows.",
+    title: "3. Automation",
+    info: "Optimizing operations through smart workflows and intelligent processes.",
     onClick: () => {},
   },
   {
     name: "panel4",
-    title: "4. Integrations",
-    info: "Connect with your favorite platforms and services. Extend functionality with pre-built integrations and custom extensions.",
+    title: "4. Growth",
+    info: "Helping businesses expand their reach, improve performance, and unlock new opportunities.",
     onClick: () => {},
   },
 ];
