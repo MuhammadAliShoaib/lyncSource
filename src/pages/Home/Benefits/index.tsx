@@ -19,6 +19,38 @@ const Benefits = () => {
           }
         />
 
+        <Grid container sx={benefitsStyles.topGrid}>
+          <Grid size={{ xs: 6, md: 6 }} sx={[benefitsStyles.layersLeftPanel]}>
+            <Box
+              component="img"
+              src={"/security.png"}
+              sx={benefitsStyles.layersImage}
+            />
+          </Grid>
+
+          <Grid
+            size={{ xs: 6, md: 6 }}
+            sx={{ display: "flex", alignItems: "center" }}
+          >
+            <Box sx={[benefitsStyles.layersRightPanel]}>
+              <Text size="bigHeader" sx={benefitsStyles.titleText} weight={500}>
+                Security First
+              </Text>
+              <Text size="body" weight={500} sx={benefitsStyles.bodyText}>
+                From secure authentication to encrypted data transmission, every
+                solution is engineered with reliability and protection in mind.
+              </Text>
+
+              <Button
+                onClick={() => {}}
+                Icon={ArrowOutwardIcon}
+                text="Learn More"
+                type="secondary"
+              />
+            </Box>
+          </Grid>
+        </Grid>
+
         <Grid container sx={benefitsStyles.topGrid2}>
           <Grid size={{ xs: 12, md: 6 }} sx={benefitsStyles.leftPanel2}>
             <Text size="bigHeader" sx={benefitsStyles.titleText} weight={500}>
@@ -74,37 +106,6 @@ const Benefits = () => {
         />
       </Box>
       <Tabs />
-      <Grid container sx={benefitsStyles.topGrid}>
-        <Grid size={{ xs: 6, md: 6 }} sx={[benefitsStyles.layersLeftPanel]}>
-          <Box
-            component="img"
-            src={"/layers.png"}
-            sx={benefitsStyles.layersImage}
-          />
-        </Grid>
-
-        <Grid
-          size={{ xs: 6, md: 6 }}
-          sx={{ display: "flex", alignItems: "center" }}
-        >
-          <Box sx={[benefitsStyles.layersRightPanel]}>
-            <Text size="bigHeader" sx={benefitsStyles.titleText} weight={500}>
-              Secure by design
-            </Text>
-            <Text size="body" weight={500} sx={benefitsStyles.bodyText}>
-              SOC 2 Type II certified. Encrypted data handling. The entire
-              intelligence stack deploys where you want.
-            </Text>
-
-            <Button
-              onClick={() => {}}
-              Icon={ArrowOutwardIcon}
-              text="Learn More"
-              type="secondary"
-            />
-          </Box>
-        </Grid>
-      </Grid>
     </Box>
   );
 };

@@ -21,7 +21,9 @@ const Results = () => {
         </Grid>
 
         <Grid size={{ xs: 12, md: 6 }} sx={resultsStyles.bottomRight}>
-          <img src="/machine.png" style={resultsStyles.image} />
+          <Box sx={resultsStyles.imageWrapper}>
+            <img src="/engine.png" style={resultsStyles.image} />
+          </Box>
         </Grid>
       </Grid>
     </Box>

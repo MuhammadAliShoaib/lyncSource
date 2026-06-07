@@ -37,6 +37,12 @@ export const resultsStyles = {
     padding: "0px 45px 0px 25px",
   },
 
+  imageWrapper: {
+    border: "1px solid #3a3a3a",
+    borderRadius: "40px",
+    overflow: "hidden",
+  },
+
   image: {
     width: "100%",
     height: "100%",
