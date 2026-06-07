@@ -7,22 +7,25 @@ import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 const useCaseTabs = [
   {
-    label: "Creative Industries",
-    title: "Creative Industries",
+    label: "Development",
+    title: "Development",
+    image: "development.jpeg",
     description:
-      "Search, segment, and reuse video moments across archives, edits, campaigns, and production libraries.",
+      "Build powerful digital products tailored to your business needs, from web platforms to mobile applications.",
   },
   {
-    label: "Advertising and Marketing",
-    title: "Advertising and Marketing",
+    label: "Technology",
+    title: "Technology",
+    image: "ai.jpeg",
     description:
-      "Actually contextual targeting, driven by understanding, not metadata. Place ads only in brand-safe scenes, no tags, no manual review.",
+      "Leverage modern technologies, AI solutions, and scalable architectures to stay ahead.",
   },
   {
-    label: "Public Sector",
-    title: "Public Sector",
+    label: "Solutions",
+    title: "Solutions",
+    image: "solutions.jpeg",
     description:
-      "Evidence management, incident reporting, and fast video review for teams that need reliable visual intelligence.",
+      "Solve real business challenges with custom software designed to improve efficiency and growth.",
   },
 ];
 
@@ -80,12 +83,18 @@ const Tabs = () => {
       >
         {visibleUseCases.map((item, index) => {
           const isActive = index === 1;
+          const imageUrl = item.image.startsWith("/")
+            ? item.image
+            : `/${item.image}`;
 
           return (
             <Box
               key={`${item.label}-${activeUseCase}`}
               sx={[
                 tabsStyles.useCaseCard,
+                {
+                  backgroundImage: `linear-gradient(90deg, rgba(0,0,0,0.72), rgba(0,0,0,0.2)), url('${imageUrl}')`,
+                },
                 isActive
                   ? tabsStyles.useCaseCardActive
                   : tabsStyles.useCaseCardPreview,
@@ -94,14 +103,14 @@ const Tabs = () => {
               <Box sx={tabsStyles.useCaseContent}>
                 <Text
                   size="bigHeader"
-                  color="text.primary"
+                  color="static.neutral"
                   sx={tabsStyles.useCaseTitle}
                 >
                   {item.title}
                 </Text>
                 <Text
                   size="header"
-                  color="text.primary"
+                  color="static.neutral"
                   sx={tabsStyles.useCaseDescription}
                 >
                   {item.description}

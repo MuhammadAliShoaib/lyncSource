@@ -3,7 +3,7 @@ import type { Theme } from "@mui/material/styles";
 export const benefitsStyles = {
   root: {
     py: { xs: 4, md: "30px" },
-    backgroundColor: (theme: Theme) => theme.palette.text.primary,
+    backgroundColor: (theme: Theme) => theme.palette.static.white,
   },
   benefitsRoot: {
     px: { xs: 2, sm: 3, md: "30px" },
@@ -119,7 +119,7 @@ export const benefitsStyles = {
   bodyText: {
     lineHeight: 1.7,
     marginBottom: { xs: 0, md: "30px" },
-
+    maxWidth: "270px",
     "& br": {
       display: { xs: "none", sm: "block" },
     },

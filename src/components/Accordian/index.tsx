@@ -56,13 +56,21 @@ export default function Accordian() {
             id={`${id}-${item.name}-header`}
             sx={accordionStyles.summary(expanded === item.name)}
           >
-            <Text size="subHeader" weight={500}>
+            <Text
+              size="subHeader"
+              weight={500}
+              color={expanded === item.name ? "static.neutral" : "text.primary"}
+            >
               {item.title}
             </Text>
           </AccordionSummary>
 
           <AccordionDetails sx={accordionStyles.details}>
-            <Text size="body" sx={{ marginBottom: "20px" }}>
+            <Text
+              size="body"
+              sx={{ marginBottom: "20px" }}
+              color="text.primary"
+            >
               {item.info}
             </Text>
 
@@ -71,6 +79,7 @@ export default function Accordian() {
               Icon={ArrowOutwardIcon}
               text="Developer Hub"
               outlined
+              type="secondary"
               size="sm"
             />
           </AccordionDetails>

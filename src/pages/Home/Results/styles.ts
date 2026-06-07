@@ -1,7 +1,7 @@
 export const resultsStyles = {
   root: {
     padding: "30px",
-    backgroundColor: (theme: any) => theme.palette.text.secondary,
+    backgroundColor: 'rgb(217,217,217)',
   },
 
   topGrid: {

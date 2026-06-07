@@ -8,9 +8,9 @@ const Results = () => {
   return (
     <Box sx={resultsStyles.root}>
       <IntroCard
-        title={"Results in minutes."}
+        title={"Digital Innovation Engine."}
         info={
-          "Infrastructure for video intelligence, turning raw video into searchable, AI-ready data at massive scale."
+          "Building digital solutions that transform ideas into scalable, high-performance products."
         }
         onClick={() => {}}
       />

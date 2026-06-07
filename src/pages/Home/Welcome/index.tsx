@@ -38,7 +38,7 @@ const Welcome = () => {
           // height="64px"
           size="sm"
           onClick={() => {}}
-          text="Go to Playground"
+          text="Talk To Sales"
           Icon={ArrowOutwardIcon}
         />
       </Box>

@@ -1,7 +1,7 @@
 export const welcomeStyles = {
   root: {
     minHeight: "70vh",
-    backgroundColor: "#f7f7f7",
+    backgroundColor: (theme:any)=>theme.palette.static.white,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",

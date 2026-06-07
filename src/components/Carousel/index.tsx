@@ -1,11 +1,11 @@
 import Box from "@mui/material/Box";
 
 const partners = [
-  "/logo.png",
-  "/logo.png",
-  "/logo.png",
-  "/logo.png",
-  "/logo.png",
+  "/fullLogo.png",
+  "/fullLogo.png",
+  "/fullLogo.png",
+  "/fullLogo.png",
+  "/fullLogo.png",
 ];
 
 const PartnersCarousel = () => {

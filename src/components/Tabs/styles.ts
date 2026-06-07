@@ -140,8 +140,7 @@ export const tabsStyles = {
     alignItems: "flex-end",
     minHeight: { xs: 390, sm: 460, md: 540, lg: 586 },
     overflow: "hidden",
-    backgroundImage:
-      "linear-gradient(90deg, rgba(0,0,0,0.72), rgba(0,0,0,0.2)), url('/mock.png')",
+    backgroundColor: "#1f1f1f",
     backgroundSize: "cover",
     backgroundPosition: "center",
     color: "#fff",

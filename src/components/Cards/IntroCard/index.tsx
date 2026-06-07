@@ -13,7 +13,9 @@ interface IIntroCard {
 }
 
 const IntroCard: FC<IIntroCard> = ({ title, info, onClick, dark = false }) => {
-  const borderColor = { borderColor: dark ? "#1d1c1c33" : "#3a3a3a" };
+  const borderColor = {
+    borderColor: dark ? 'static.neutral' : "#3a3a3a",
+  };
 
   return (
     <Grid container sx={introCardStyle.topGrid}>
@@ -25,17 +27,20 @@ const IntroCard: FC<IIntroCard> = ({ title, info, onClick, dark = false }) => {
           size="bigHeader"
           sx={introCardStyle.titleText}
           weight={500}
-          color={dark ? "text.secondary" : "text.primary"}
+          color={dark ? "static.neutral" : "text.primary"}
         >
           {title}
         </Text>
       </Grid>
 
-      <Grid size={{ xs: 12, md: 6 }} sx={[introCardStyle.rightPanel,borderColor]}>
+      <Grid
+        size={{ xs: 12, md: 6 }}
+        sx={[introCardStyle.rightPanel, borderColor]}
+      >
         <Text
           size="body"
           weight={500}
-          color={dark ? "text.secondary" : "text.primary"}
+          color={dark ? "static.neutral" : "text.primary"}
           sx={introCardStyle.bodyText}
         >
           {info}
@@ -47,6 +52,7 @@ const IntroCard: FC<IIntroCard> = ({ title, info, onClick, dark = false }) => {
             Icon={ArrowOutwardIcon}
             text="Developer Hub"
             outlined
+            type={!dark ? 'secondary' : 'primary'}
           />
         ) : null}
       </Grid>
