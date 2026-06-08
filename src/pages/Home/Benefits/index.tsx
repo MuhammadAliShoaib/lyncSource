@@ -1,7 +1,6 @@
-import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import Button from "../../../components/Button";
+import ImageIntro from "../../../components/Cards/ImageIntro";
 import IntroCard from "../../../components/Cards/IntroCard";
 import Carousel from "../../../components/Carousel";
 import Tabs from "../../../components/Tabs";
@@ -19,37 +18,12 @@ const Benefits = () => {
           }
         />
 
-        <Grid container sx={benefitsStyles.topGrid}>
-          <Grid size={{ xs: 6, md: 6 }} sx={[benefitsStyles.layersLeftPanel]}>
-            <Box
-              component="img"
-              src={"/security.png"}
-              sx={benefitsStyles.layersImage}
-            />
-          </Grid>
-
-          <Grid
-            size={{ xs: 6, md: 6 }}
-            sx={{ display: "flex", alignItems: "center" }}
-          >
-            <Box sx={[benefitsStyles.layersRightPanel]}>
-              <Text size="bigHeader" sx={benefitsStyles.titleText} weight={500}>
-                Security First
-              </Text>
-              <Text size="body" weight={500} sx={benefitsStyles.bodyText}>
-                From secure authentication to encrypted data transmission, every
-                solution is engineered with reliability and protection in mind.
-              </Text>
-
-              <Button
-                onClick={() => {}}
-                Icon={ArrowOutwardIcon}
-                text="Learn More"
-                type="secondary"
-              />
-            </Box>
-          </Grid>
-        </Grid>
+        <ImageIntro
+          title={"Security First"}
+          description="From secure authentication to encrypted data transmission, every
+                solution is engineered with reliability and protection in mind."
+          image="/security.png"
+        />
 
         <Grid container sx={benefitsStyles.topGrid2}>
           <Grid size={{ xs: 12, md: 6 }} sx={benefitsStyles.leftPanel2}>
