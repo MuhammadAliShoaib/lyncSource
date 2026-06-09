@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Button from "../../../components/Button";
 import { Text } from "../../../components/Text";
-import { ImageIntroStyles } from "./styles";
+import { imageIntroStyles } from "./styles";
 import { memo, type FC } from "react";
 
 interface IImageIntro {
@@ -22,10 +22,10 @@ const ImageIntro: FC<IImageIntro> = ({
   imageLeft = true,
 }) => {
   return (
-    <Grid container sx={ImageIntroStyles.topGrid}>
+    <Grid container sx={imageIntroStyles.topGrid}>
       {imageLeft ? (
-        <Grid size={{ xs: 6, md: 6 }} sx={[ImageIntroStyles.layersLeftPanel]}>
-          <Box component="img" src={image} sx={ImageIntroStyles.layersImage} />
+        <Grid size={{ xs: 6, md: 6 }} sx={[imageIntroStyles.layersLeftPanel]}>
+          <Box component="img" src={image} sx={imageIntroStyles.layersImage} />
         </Grid>
       ) : null}
 
@@ -33,11 +33,18 @@ const ImageIntro: FC<IImageIntro> = ({
         size={{ xs: 6, md: 6 }}
         sx={{ display: "flex", alignItems: "center" }}
       >
-        <Box sx={[ImageIntroStyles.layersRightPanel]}>
-          <Text size="bigHeader" sx={ImageIntroStyles.titleText} weight={500}>
+        <Box
+          sx={[
+            imageIntroStyles.layersRightPanel,
+            imageLeft
+              ? imageIntroStyles.borderLeft
+              : imageIntroStyles.borderRight,
+          ]}
+        >
+          <Text size="bigHeader" sx={imageIntroStyles.titleText} weight={500}>
             {title}
           </Text>
-          <Text size="body" weight={500} sx={ImageIntroStyles.bodyText}>
+          <Text size="body" weight={500} sx={imageIntroStyles.bodyText}>
             {description}
           </Text>
 
@@ -52,8 +59,8 @@ const ImageIntro: FC<IImageIntro> = ({
         </Box>
       </Grid>
       {!imageLeft ? (
-        <Grid size={{ xs: 6, md: 6 }} sx={[ImageIntroStyles.layersLeftPanel]}>
-          <Box component="img" src={image} sx={ImageIntroStyles.layersImage} />
+        <Grid size={{ xs: 6, md: 6 }} sx={[imageIntroStyles.layersLeftPanel]}>
+          <Box component="img" src={image} sx={imageIntroStyles.layersImage} />
         </Grid>
       ) : null}
     </Grid>

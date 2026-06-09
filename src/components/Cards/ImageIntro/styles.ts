@@ -1,4 +1,4 @@
-export const ImageIntroStyles = {
+export const imageIntroStyles = {
   topGrid: {
     mb: { xs: 6, md: 10 },
     mt: { xs: 5, md: 8 },
@@ -8,7 +8,12 @@ export const ImageIntroStyles = {
   },
   layersRightPanel: {
     px: { xs: 2, sm: 3, md: "45px" },
+  },
+  borderLeft : {
     borderLeft: { xs: "1px solid #1d1c1c33" },
+  },
+  borderRight : {
+    borderRight: { xs: "1px solid #1d1c1c33" },
   },
   layersImage: {
     width: "100%",
@@ -22,7 +27,7 @@ export const ImageIntroStyles = {
   bodyText: {
     lineHeight: 1.7,
     marginBottom: { xs: 0, md: "30px" },
-    maxWidth: "270px",
+    // maxWidth: "270px",
     "& br": {
       display: { xs: "none", sm: "block" },
     },
