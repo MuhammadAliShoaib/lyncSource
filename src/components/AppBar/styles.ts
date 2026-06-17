@@ -9,8 +9,8 @@ export const appBarStyles = {
       !mobileOpen && isVisible ? "translateY(0)" : "translateY(-100%)",
     transition: "transform 220ms ease",
     background: "rgba(0,0,0, 0)",
-    backdropFilter: "blur(18px)",
-    WebkitBackdropFilter: "blur(18px)",
+    backdropFilter: "blur(1px)",
+    WebkitBackdropFilter: "blur(6px)",
     borderBottom: `1px solid ${
       isLight ? "rgba(255,255,255,0.18)" : "rgba(0,0,0,0.08)"
     }`,
