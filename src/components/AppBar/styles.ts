@@ -23,7 +23,7 @@ export const appBarStyles = {
   },
 
   toolbar: {
-    minHeight: { xs: 104, md: 108 },
+    minHeight: { xs: 72, md: 76 },
     display: "grid",
     gridTemplateColumns: { xs: "1fr auto", md: "auto 1fr auto" },
     gap: { xs: 2, md: 4 },
@@ -40,8 +40,8 @@ export const appBarStyles = {
 
   logoImage: {
     display: "block",
-    width: 45,
-    height: 100,
+    width: 34,
+    height: 64,
     flexShrink: 0,
     objectFit: "cover",
     objectPosition: "center",
@@ -89,10 +89,10 @@ export const appBarStyles = {
     display: { xs: "inline-flex", md: "none" },
     justifySelf: "end",
     color: isLight ? "#fff" : "black",
-    width: 58,
-    height: 58,
+    width: 46,
+    height: 46,
     "& .MuiSvgIcon-root": {
-      fontSize: 46,
+      fontSize: 36,
     },
   }),
 

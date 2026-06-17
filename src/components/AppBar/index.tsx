@@ -47,7 +47,7 @@ function AppBar() {
       const currentScrollY = window.scrollY;
       const isScrollingDown = currentScrollY > lastScrollY.current;
       const isOverHero =
-        isServicesPage && currentScrollY < window.innerHeight - 108;
+        isServicesPage && currentScrollY < window.innerHeight - 76;
 
       if (currentScrollY < 16) {
         setIsVisible(true);
