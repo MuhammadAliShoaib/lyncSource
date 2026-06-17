@@ -50,8 +50,10 @@ const solutions = [
 const Services = () => {
   return (
     <Box>
+      <Box sx={serviceStyle.hero} />
       {solutions.map((item, index) => (
         <Box
+          key={item.title}
           sx={[
             serviceStyle.solution,
             {

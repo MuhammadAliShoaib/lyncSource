@@ -12,7 +12,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Toolbar from "@mui/material/Toolbar";
 import * as React from "react";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useLocation } from "react-router-dom";
 import Button from "../Button";
 import { appBarStyles } from "./styles";
 import { Text } from "../Text";
@@ -25,9 +25,14 @@ const pages = [
 ];
 
 function AppBar() {
+  const location = useLocation();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [isVisible, setIsVisible] = React.useState(true);
+  const [isOverServicesHero, setIsOverServicesHero] = React.useState(
+    location.pathname === "/services"
+  );
   const lastScrollY = React.useRef(0);
+  const isServicesPage = location.pathname === "/services";
 
   const toggleMobileMenu = () => {
     setMobileOpen((open) => !open);
@@ -41,6 +46,8 @@ function AppBar() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       const isScrollingDown = currentScrollY > lastScrollY.current;
+      const isOverHero =
+        isServicesPage && currentScrollY < window.innerHeight - 108;
 
       if (currentScrollY < 16) {
         setIsVisible(true);
@@ -48,22 +55,24 @@ function AppBar() {
         setIsVisible(!isScrollingDown);
       }
 
+      setIsOverServicesHero(isOverHero);
       lastScrollY.current = currentScrollY;
     };
 
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [isServicesPage]);
 
   return (
     <>
       <MuiAppBar
         position="fixed"
         elevation={0}
-        sx={appBarStyles.root(isVisible, mobileOpen)}
+        sx={appBarStyles.root(isVisible, mobileOpen, isOverServicesHero)}
       >
         <Container maxWidth={false} sx={appBarStyles.container}>
           <Toolbar disableGutters sx={appBarStyles.toolbar}>
@@ -79,7 +88,7 @@ function AppBar() {
                 alt="TwelveLabs"
                 sx={appBarStyles.logoImage}
               />
-              <Text size="header" sx={appBarStyles.logoText}>
+              <Text size="header" sx={appBarStyles.logoText(isOverServicesHero)}>
                 Lync Source
               </Text>
             </Box>
@@ -94,7 +103,7 @@ function AppBar() {
                   key={page.href}
                   component={RouterLink}
                   to={page.href}
-                  sx={appBarStyles.navigationLink}
+                  sx={appBarStyles.navigationLink(isOverServicesHero)}
                 >
                   {page.label}
                 </Box>
@@ -108,7 +117,7 @@ function AppBar() {
                 outlined
                 text="Talk to Sales"
                 Icon={ArrowOutwardIcon}
-                type="secondary"
+                type={isOverServicesHero ? "primary" : "secondary"}
               />
             </Box>
 
@@ -117,7 +126,7 @@ function AppBar() {
               aria-controls="mobile-navigation"
               aria-expanded={mobileOpen}
               onClick={toggleMobileMenu}
-              sx={appBarStyles.menuButton}
+              sx={appBarStyles.menuButton(isOverServicesHero)}
             >
               <MenuIcon />
             </IconButton>
