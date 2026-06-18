@@ -12,7 +12,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Toolbar from "@mui/material/Toolbar";
 import * as React from "react";
-import { Link as RouterLink, useLocation } from "react-router-dom";
+import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
 import Button from "../Button";
 import { appBarStyles } from "./styles";
 import { Text } from "../Text";
@@ -29,10 +29,12 @@ function AppBar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [isVisible, setIsVisible] = React.useState(true);
   const [isOverServicesHero, setIsOverServicesHero] = React.useState(
-    location.pathname === "/services"
+    location.pathname === "/services",
   );
   const lastScrollY = React.useRef(0);
   const isServicesPage = location.pathname === "/services";
+
+  const navigate = useNavigate();
 
   const toggleMobileMenu = () => {
     setMobileOpen((open) => !open);
@@ -40,6 +42,12 @@ function AppBar() {
 
   const closeMobileMenu = () => {
     setMobileOpen(false);
+  };
+
+  const contactUs = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    closeMobileMenu();
+    navigate("/contact-us");
   };
 
   React.useEffect(() => {
@@ -88,7 +96,10 @@ function AppBar() {
                 alt="TwelveLabs"
                 sx={appBarStyles.logoImage}
               />
-              <Text size="header" sx={appBarStyles.logoText(isOverServicesHero)}>
+              <Text
+                size="header"
+                sx={appBarStyles.logoText(isOverServicesHero)}
+              >
                 Lync Source
               </Text>
             </Box>
@@ -113,7 +124,7 @@ function AppBar() {
             <Box sx={appBarStyles.desktopActions}>
               <Button
                 size="sm"
-                onClick={() => {}}
+                onClick={contactUs}
                 outlined
                 text="Talk to Sales"
                 Icon={ArrowOutwardIcon}
@@ -190,7 +201,7 @@ function AppBar() {
           <Button
             size="sm"
             width="100%"
-            onClick={closeMobileMenu}
+            onClick={contactUs}
             outlined
             text="Talk to Sales"
             Icon={ArrowOutwardIcon}

@@ -4,6 +4,7 @@ import ImageIntro from "../../components/Cards/ImageIntro";
 import { Text } from "../../components/Text";
 import Button from "../../components/Button";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import { useNavigate } from "react-router-dom";
 
 const solutions = [
   {
@@ -51,6 +52,8 @@ const solutions = [
 ];
 
 const Services = () => {
+  const navigate = useNavigate();
+
   return (
     <Box>
       <Box sx={serviceStyle.hero}>
@@ -77,7 +80,7 @@ const Services = () => {
           <Button
             type="primary"
             size="sm"
-            onClick={() => {}}
+            onClick={() => navigate("/contact-us")}
             text="Talk To Sales"
             Icon={ArrowOutwardIcon}
           />

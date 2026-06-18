@@ -5,7 +5,6 @@ import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import Button from "../../components/Button";
 import { Text } from "../../components/Text";
 import { styles } from "./styles";
-import ImageIntro from "../../components/Cards/ImageIntro";
 
 const serviceOptions = [
   "Web Design & Development",

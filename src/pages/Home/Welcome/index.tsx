@@ -1,10 +1,13 @@
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import Box from "@mui/material/Box";
+import { useNavigate } from "react-router-dom";
 import Button from "../../../components/Button";
 import { Text } from "../../../components/Text";
 import { welcomeStyles } from "./styles";
 
 const Welcome = () => {
+  const navigate = useNavigate();
+
   return (
     <Box component="section" sx={welcomeStyles.root}>
       <Box sx={welcomeStyles.content}>
@@ -37,7 +40,7 @@ const Welcome = () => {
           type="secondary"
           // height="64px"
           size="sm"
-          onClick={() => {}}
+          onClick={() => navigate("/contact-us")}
           text="Talk To Sales"
           Icon={ArrowOutwardIcon}
         />
