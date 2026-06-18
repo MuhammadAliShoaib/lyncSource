@@ -1,3 +1,4 @@
+import BusinessOutlinedIcon from "@mui/icons-material/BusinessOutlined";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -23,6 +24,18 @@ const socialLinks = [
     label: "LinkedIn",
     href: "https://www.linkedin.com/company/lyncsource",
     Icon: LinkedInIcon,
+  },
+];
+
+const officeLocations = [
+  {
+    country: "USA Headquarter",
+    address: "3 Sugar Creek Center Blvd, Sugar Land, TX 77478, USA",
+  },
+  {
+    country: "Pakistan",
+    address:
+      "603, Al-Khaleej Tower, Shaheed-e-Millat Rd, BMCHS Sharafabad, Karachi, 75500",
   },
 ];
 
@@ -72,6 +85,32 @@ const Footer = () => {
                 sx={footerStyles.footerLink}
               >
                 {link.label}
+              </Box>
+            ))}
+          </Box>
+        </Box>
+
+        <Box>
+         <Text size="header" component="h2" sx={footerStyles.sectionTitle}>
+            Our Offices
+          </Text>
+          <Box sx={footerStyles.officeList}>
+            {officeLocations.map((office) => (
+              <Box key={office.country}>
+                <Text
+                  size="body"
+                  component="h3"
+                  sx={footerStyles.officeCountry}
+                >
+                  {office.country}
+                </Text>
+                <Text
+                  size="body"
+                  component="p"
+                  sx={footerStyles.officeAddress}
+                >
+                  {office.address}
+                </Text>
               </Box>
             ))}
           </Box>

@@ -11,9 +11,9 @@ export const footerStyles = {
     display: "grid",
     gridTemplateColumns: {
       xs: "1fr",
-      md: "minmax(280px, 1.2fr) minmax(180px, 0.7fr) minmax(260px, 1fr)",
+      md: "minmax(260px, 1.15fr) minmax(150px, 0.55fr) minmax(280px, 1fr) minmax(250px, 0.9fr)",
     },
-    gap: { xs: 5, md: 8 },
+    gap: { xs: 5, md: 5, lg: 8 },
     maxWidth: 1280,
     mx: "auto",
   },
@@ -106,6 +106,43 @@ export const footerStyles = {
       fontSize: 22,
       flexShrink: 0,
     },
+  },
+
+  officesHeader: {
+    display: "flex",
+    alignItems: "center",
+    gap: 1.5,
+    mb: 3,
+    color: "secondary.main",
+    "& .MuiSvgIcon-root": {
+      fontSize: { xs: 42, md: 48 },
+      flexShrink: 0,
+    },
+  },
+
+  officesTitle: {
+    color: "secondary.main",
+    fontWeight: 800,
+    lineHeight: 1.1,
+  },
+
+  officeList: {
+    display: "grid",
+    gap: 3,
+  },
+
+  officeCountry: {
+    color: "#fff",
+    fontWeight: 800,
+    lineHeight: 1.25,
+    mb: 1,
+  },
+
+  officeAddress: {
+    color: "rgba(255,255,255,0.86)",
+    fontSize: "1rem",
+    fontWeight: 500,
+    lineHeight: 1.55,
   },
 
   bottom: {
