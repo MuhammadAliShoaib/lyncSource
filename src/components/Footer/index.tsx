@@ -1,4 +1,3 @@
-import BusinessOutlinedIcon from "@mui/icons-material/BusinessOutlined";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
