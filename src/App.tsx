@@ -13,6 +13,7 @@ import theme from "./utils/theme";
 import AppBar from "./components/AppBar";
 import Services from "./pages/Services";
 import Footer from "./components/Footer";
+import ContactUs from "./pages/ContactUs";
 
 const themeMode = createTheme(theme());
 
@@ -38,6 +39,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
               <Route path="/services" element={<Services />} />
+              <Route path="/contact-us" element={<ContactUs />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </main>
