@@ -74,14 +74,14 @@ export default function Accordian() {
               {item.info}
             </Text>
 
-            <Button
+            {/* <Button
               onClick={item.onClick}
               Icon={ArrowOutwardIcon}
               text="Developer Hub"
               outlined
               type="secondary"
               size="sm"
-            />
+            /> */}
           </AccordionDetails>
         </Accordion>
       ))}

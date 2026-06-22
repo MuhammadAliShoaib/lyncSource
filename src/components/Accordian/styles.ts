@@ -21,7 +21,7 @@ export const accordionStyles = {
 
   details: {
     width: "250px",
-    py: 4,
+    pt: 4,
     px: 0,
   },
 };

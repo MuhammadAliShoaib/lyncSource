@@ -115,10 +115,10 @@ const Tabs = () => {
                 >
                   {item.description}
                 </Text>
-                <Box component="span" sx={tabsStyles.useCaseLink}>
+                {/* <Box component="span" sx={tabsStyles.useCaseLink}>
                   Learn more
                   <OpenInNewIcon sx={tabsStyles.useCaseIcon} />
-                </Box>
+                </Box> */}
               </Box>
             </Box>
           );

@@ -12,7 +12,7 @@ const Results = () => {
         info={
           "Building digital solutions that transform ideas into scalable, high-performance products."
         }
-        onClick={() => {}}
+        // onClick={() => {}}
       />
 
       <Grid container>
