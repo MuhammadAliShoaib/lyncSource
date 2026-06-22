@@ -3,8 +3,6 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import * as React from "react";
 import { Text } from "../Text";
-import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
-import Button from "../Button";
 import { accordionStyles } from "./styles";
 
 const accordians = [

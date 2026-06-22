@@ -1,9 +1,8 @@
-import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
 import { useState } from "react";
 import { Text } from "../Text";
 import { tabsStyles } from "./styles";
-import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 const useCaseTabs = [
   {
