@@ -7,19 +7,25 @@ const projects = [
   {
     title: "Lync Source Accounting",
     description:
-      "Schlumberger (now known as SLB) is a global leader in oilfield services and technology, providing innovative solutions for the energy industry.",
+      "Lync Source is a full-stack Asset and Liability Ledger Management System that helps businesses manage financial operations, accounts, vendors, and invoices.",
     image: '/lyncSource',
+  },
+  {
+    title: "Shift Trader",
+    description:
+      "Shift Trader is a mobile application for essential workers, including police officers, firefighters, and healthcare professionals, to swap shifts, manage schedules, and coordinate with colleagues.",
+    image: "/shiftTrader",
   },
   {
     title: "Flagship Towing",
     description:
-      "HipLink (formerly Semotus Solutions) is a privately held company that provides text and voice based wireless alert and notification systems.",
+      "Developed a towing and marine assistance management platform for Flagship Towing, a leading provider of on-water support services, featuring real-time vessel tracking, service dispatching, and operational management tools to enhance response times and customer experience.",
     image: "/flagship",
   },
   {
     title: "Eclinic Assist",
     description:
-      "Barnes & Noble is a leading bookseller and one of the largest retail bookstore chains in the United States, serving readers across every category.",
+      "EClinic Assist is a healthcare credentialing and provider management platform that streamlines payor enrollment, compliance tracking, contract review, and credential management for medical practices.",
     image: "/eclinicAssist",
   },
 ];
