@@ -14,6 +14,7 @@ import AppBar from "./components/AppBar";
 import Services from "./pages/Services";
 import Footer from "./components/Footer";
 import ContactUs from "./pages/ContactUs";
+import Products from "./pages/Products";
 
 const themeMode = createTheme(theme());
 
@@ -40,6 +41,7 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/services" element={<Services />} />
               <Route path="/contact-us" element={<ContactUs />} />
+              <Route path="/products" element={<Products />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </main>

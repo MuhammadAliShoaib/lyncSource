@@ -20,7 +20,7 @@ import { Text } from "../Text";
 const pages = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
-  { label: "Portfolio", href: "/portfolio" },
+  { label: "Products", href: "/products" },
   { label: "Contact Us", href: "/contact-us" },
 ];
 
