@@ -9,8 +9,8 @@ import { footerStyles } from "./styles";
 
 const companyLinks = [
   { label: "Services", href: "/services" },
-  { label: "Portfolio", href: "/portfolio" },
-  { label: "About Us", href: "/" },
+  { label: "Products", href: "/products" },
+  { label: "Contact Us", href: "/contact-us" },
 ];
 
 const socialLinks = [
