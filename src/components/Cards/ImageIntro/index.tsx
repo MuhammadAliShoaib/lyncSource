@@ -21,17 +21,21 @@ const ImageIntro: FC<IImageIntro> = ({
   image,
   imageLeft = true,
 }) => {
+  const imageOrder = imageLeft ? { xs: 1, md: 1 } : { xs: 1, md: 2 };
+  const contentOrder = imageLeft ? { xs: 2, md: 2 } : { xs: 2, md: 1 };
+
   return (
     <Grid container sx={imageIntroStyles.topGrid}>
-      {imageLeft ? (
-        <Grid size={{ xs: 6, md: 6 }} sx={[imageIntroStyles.layersLeftPanel]}>
-          <Box component="img" src={image} sx={imageIntroStyles.layersImage} />
-        </Grid>
-      ) : null}
+      <Grid
+        size={{ xs: 12, md: 6 }}
+        sx={[imageIntroStyles.layersLeftPanel, { order: imageOrder }]}
+      >
+        <Box component="img" src={image} sx={imageIntroStyles.layersImage} />
+      </Grid>
 
       <Grid
-        size={{ xs: 6, md: 6 }}
-        sx={{ display: "flex", alignItems: "center" }}
+        size={{ xs: 12, md: 6 }}
+        sx={[imageIntroStyles.contentPanel, { order: contentOrder }]}
       >
         <Box
           sx={[
@@ -58,11 +62,6 @@ const ImageIntro: FC<IImageIntro> = ({
           ) : null}
         </Box>
       </Grid>
-      {!imageLeft ? (
-        <Grid size={{ xs: 6, md: 6 }} sx={[imageIntroStyles.layersLeftPanel]}>
-          <Box component="img" src={image} sx={imageIntroStyles.layersImage} />
-        </Grid>
-      ) : null}
     </Grid>
   );
 };
